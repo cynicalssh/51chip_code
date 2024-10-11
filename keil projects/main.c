@@ -1,35 +1,17 @@
-#include <regx51.h>
+#include <REGX52.H>
+#include "LCD1602.h"	//??LCD1602???
+#include "Delay.h"		//??Delay???
 
-void delay(unsigned int time);  // ??????????
+int Result=0;
 
-void main() {
-		unsigned char LEDnum=0;
-		P1=0x01;
-    while(1) {
-			if(P3_0==0){
-				delay(200);
-				while(P3_0==0);
-				delay(200);
-				
-				LEDnum++;
-				P1=0x01<<LEDnum;
-			}
-			if(P3_1==0){
-				delay(200);
-				while(P3_1==0);
-				delay(200);
-				
-				LEDnum--;
-				P1=0x01<<LEDnum;
-			}
+void main()
+{
+	LCD_Init();
+	LCD_ShowNum(1,1,Result,3);
+	while(1)
+	{
+		Result++;					//Result??
+		Delay(1000);				//??1?
+		LCD_ShowNum(1,1,Result,3);	//?LCD?1?1???Result,???3?
 	}
-}
-
-void delay(unsigned int time) {  // ???? time ???????
-    unsigned int i, j;
-    for(i = 0; i < time; i++) {
-        for(j = 0; j < 100; j++) {
-            // ???????
-        }
-    }
 }
