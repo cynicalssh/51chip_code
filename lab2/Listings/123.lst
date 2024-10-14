@@ -1,0 +1,85 @@
+A51 MACRO ASSEMBLER  123                                                                  10/13/2024 12:08:13 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\123.obj
+ASSEMBLER INVOKED BY: D:\keil\C51\BIN\A51.EXE 123.asm SET(SMALL) DEBUG PRINT(.\Listings\123.lst) OBJECT(.\Objects\123.ob
+                      j) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1         ORG 0000H           ; 从地址 0000H 开始
+0000                   2     START:
+0000 E520              3         MOV A, 20H          ; 将内部 RAM 20H 中的键值加载到 A
+0002 B4EE03            4         CJNE A, #0EEH, CHECK_1  ; 判断是否为 0EEH
+0005 020027            5         LJMP PRO1           ; 跳转到 PRO1
+0008                   6     CHECK_1:
+0008 B4DE03            7         CJNE A, #0DEH, CHECK_2  ; 判断是否为 0DEH
+000B 020028            8         LJMP PRO2           ; 跳转到 PRO2
+000E                   9     CHECK_2:
+000E B4BE03           10         CJNE A, #0BEH, CHECK_3  ; 判断是否为 0BEH
+0011 020029           11         LJMP PRO3           ; 跳转到 PRO3
+0014                  12     CHECK_3:
+0014 B47E03           13         CJNE A, #07EH, CHECK_4  ; 判断是否为 07EH
+0017 02002A           14         LJMP PRO4           ; 跳转到 PRO4
+001A                  15     CHECK_4:
+001A B4ED03           16         CJNE A, #0EDH, CHECK_5  ; 判断是否为 0EDH
+001D 02002B           17         LJMP PRO5           ; 跳转到 PRO5
+0020                  18     CHECK_5:
+0020 B4DD03           19         CJNE A, #0DDH, END_PROGRAM  ; 判断是否为 0DDH
+0023 02002C           20         LJMP PRO6           ; 跳转到 PRO6
+0026                  21     END_PROGRAM:
+0026 00               22         NOP                 ; 程序结束
+                      23     
+0027                  24     PRO1:                   ; 定义 PRO1
+                      25         ; 这里写 PRO1 段的代码
+0027 22               26         RET                 ; 执行完毕返回
+                      27     
+0028                  28     PRO2:                   ; 定义 PRO2
+                      29         ; 这里写 PRO2 段的代码
+0028 22               30         RET
+                      31     
+0029                  32     PRO3:                   ; 定义 PRO3
+                      33         ; 这里写 PRO3 段的代码
+0029 22               34         RET
+                      35     
+002A                  36     PRO4:                   ; 定义 PRO4
+                      37         ; 这里写 PRO4 段的代码
+002A 22               38         RET
+                      39     
+002B                  40     PRO5:                   ; 定义 PRO5
+                      41         ; 这里写 PRO5 段的代码
+002B 22               42         RET
+                      43     
+002C                  44     PRO6:                   ; 定义 PRO6
+                      45         ; 这里写 PRO6 段的代码
+002C 22               46         RET
+                      47     
+                      48         END                 ; 程序结束
+A51 MACRO ASSEMBLER  123                                                                  10/13/2024 12:08:13 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+CHECK_1. . . . . .  C ADDR   0008H   A   
+CHECK_2. . . . . .  C ADDR   000EH   A   
+CHECK_3. . . . . .  C ADDR   0014H   A   
+CHECK_4. . . . . .  C ADDR   001AH   A   
+CHECK_5. . . . . .  C ADDR   0020H   A   
+END_PROGRAM. . . .  C ADDR   0026H   A   
+PRO1 . . . . . . .  C ADDR   0027H   A   
+PRO2 . . . . . . .  C ADDR   0028H   A   
+PRO3 . . . . . . .  C ADDR   0029H   A   
+PRO4 . . . . . . .  C ADDR   002AH   A   
+PRO5 . . . . . . .  C ADDR   002BH   A   
+PRO6 . . . . . . .  C ADDR   002CH   A   
+START. . . . . . .  C ADDR   0000H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
